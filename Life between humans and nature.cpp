@@ -4,6 +4,7 @@
 #include <graphics.h>
 #include <dos.h>
 #include <math.h>
+#include <time.h>
 
 void planetMove(int xrad, int yrad, int midx, int midy, int x[60], int y[60]){
     int i, j = 0;
