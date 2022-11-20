@@ -6,11 +6,46 @@
 #include <math.h>
 #include <time.h>
 
+void ShowPressKey(int midx, int midy){
+    settextjustify(CENTER_TEXT, CENTER_TEXT);
+	settextstyle(10, HORIZ_DIR, 12);
+    outtextxy(midx+250, midy+250, "For next seen, press any key[FROM KEYBOARD]");
+}
+
+void showTextInGraphicsWindowFullScr(int x, int y, char showText[50]){
+    int midx = x;
+    int midy = y;
+
+	settextjustify(CENTER_TEXT, CENTER_TEXT);
+	settextstyle(0, HORIZ_DIR, 18);
+    outtextxy(midx, midy, showText);
+
+    delay(5000);
+    cleardevice();
+
+    settextjustify(CENTER_TEXT, CENTER_TEXT);
+	settextstyle(0, HORIZ_DIR, 18);
+    outtextxy(midx, midy, showText);
+
+    ShowPressKey(midx, midy);
+
+    getch();
+    cleardevice();
+}
+
+void showTextInGraphicsWindow(int x, int y, char showText[50], int textSize, int textColor, int textStyle){
+    setcolor(textColor);
+    settextstyle(textStyle, HORIZ_DIR, 1);
+	settextjustify(CENTER_TEXT, CENTER_TEXT);
+	settextstyle(0, HORIZ_DIR, textSize);
+    outtextxy(x, y, showText);
+}
+
 void planetMove(int xrad, int yrad, int midx, int midy, int x[60], int y[60]){
     int i, j = 0;
     for (i = 360; i > 0; i = i - 6){
-            x[j] = midx - (xrad * cos((i * 3.14) / 180));
-            y[j++] = midy - (yrad * sin((i * 3.14) / 180));
+        x[j] = midx - (xrad * cos((i * 3.14) / 180));
+        y[j++] = midy - (yrad * sin((i * 3.14) / 180));
     }
 }
 
@@ -18,6 +53,8 @@ void firstIntro(int m, int n){
     int i = 0, midx, midy;
     midx = m;
     midy = n;
+
+    showTextInGraphicsWindowFullScr(midx, midy, "Eternity ago...");
     int xrad[9], yrad[9], x[9][60], y[9][60];
     int pos[6], planet[6], tmp;
 
@@ -52,9 +89,7 @@ void firstIntro(int m, int n){
         circle(midx, midy, 25);
         floodfill(midx, midy, RED);
 
-        setcolor(15);
-        settextstyle(3, HORIZ_DIR, 1);
-        outtextxy(midx-35, midy, "OLD SUN");
+        showTextInGraphicsWindow(midx, midy+5, "SUN", 0, 15, 3);
 
         setcolor(RED);
         setfillstyle(SOLID_FILL, RED);
@@ -87,9 +122,13 @@ void firstIntro(int m, int n){
                 pos[i] = pos[i] - 1;
         }
 
-        delay(500);
+        ShowPressKey(midx, midy);
+
+        delay(400);
         cleardevice();
     }
+    getch();
+    cleardevice();
     closegraph();
 }
 void secondIntro(){
@@ -111,6 +150,6 @@ int main(){
     //secondIntro();
     //mainProcess();
 
-    getch();
+   // getch();
     closegraph();
 }

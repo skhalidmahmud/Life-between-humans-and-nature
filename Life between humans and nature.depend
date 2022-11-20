@@ -1,9 +1,10 @@
 # depslib dependency file v1.0
-1668951290 source:c:\users\skhal\onedrive\desktop\for short time\life between humans and nature\life between humans and nature.cpp
+1668964922 source:c:\users\skhal\onedrive\desktop\for short time\life between humans and nature\life between humans and nature.cpp
 	<windows.h>
 	<stdio.h>
 	<conio.h>
 	<graphics.h>
 	<dos.h>
 	<math.h>
+	<time.h>
 
