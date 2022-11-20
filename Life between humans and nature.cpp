@@ -50,6 +50,9 @@ void planetMove(int xrad, int yrad, int midx, int midy, int x[60], int y[60]){
 }
 
 void firstIntro(int m, int n){
+    time_t secondsStart, secondsEnd;
+    secondsStart = time(NULL);
+
     int i = 0, midx, midy;
     midx = m;
     midy = n;
@@ -122,7 +125,10 @@ void firstIntro(int m, int n){
                 pos[i] = pos[i] - 1;
         }
 
-        ShowPressKey(midx, midy);
+        secondsEnd = time(NULL);
+        if((secondsEnd - secondsStart) >= 20){
+            ShowPressKey(midx, midy);
+        }
 
         delay(400);
         cleardevice();
