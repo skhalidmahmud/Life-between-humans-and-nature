@@ -6,6 +6,26 @@
 #include <math.h>
 #include <time.h>
 
+void customStar4Edge(int x, int y, int e){
+	int m = e/5;
+    setfillstyle(1, 15);
+
+	line(x-m, y, x, y+e);
+	line(x, y+e, x+m, y);
+	line(x+m, y, x, y-e);
+	line(x, y-e, x-m, y);
+
+	floodfill(x, y, WHITE);
+
+	line(x, y+m, x+e, y);
+	line(x+e, y, x, y-m);
+	line(x, y-m, x-e, y);
+	line(x-e, y, x, y+m);
+
+	floodfill(x+m+1, y, WHITE);
+	floodfill(x-m-1, y, WHITE);
+}
+
 void ShowPressKey(int midx, int midy){
     settextjustify(CENTER_TEXT, CENTER_TEXT);
 	settextstyle(10, HORIZ_DIR, 12);
@@ -126,6 +146,10 @@ void firstIntro(int m, int n){
         }
 
         secondsEnd = time(NULL);
+
+     //   putpixel(midx+250, midy+200, 15);
+     //   customStar4Edge(midx+250, midy+200, 20);
+
         if((secondsEnd - secondsStart) >= 20){
             ShowPressKey(midx, midy);
         }
@@ -135,10 +159,9 @@ void firstIntro(int m, int n){
     }
     getch();
     cleardevice();
-    closegraph();
 }
-void secondIntro(){
-    // printf("This is just second intro!\n");
+void secondIntro(int midx, int midy){
+    customStar4Edge(midx+250, midy+200, 20);
 }
 void mainProcess(){
     while(!kbhit()){
@@ -153,7 +176,7 @@ int main(){
     int midy = getmaxy() / 2;
 
     firstIntro(midx, midy);
-    //secondIntro();
+    secondIntro(midx, midy);
     //mainProcess();
 
    // getch();
