@@ -147,23 +147,37 @@ void firstIntro(int m, int n){
 
         secondsEnd = time(NULL);
 
-     //   putpixel(midx+250, midy+200, 15);
-     //   customStar4Edge(midx+250, midy+200, 20);
-
         if((secondsEnd - secondsStart) >= 20){
             ShowPressKey(midx, midy);
         }
+        setcolor(WHITE);
+        customStar4Edge(midx-220, midy+160, 25);
+        customStar4Edge(midx+190, midy+10, 5);
+        customStar4Edge(midx+200, midy+120, 10);
+        customStar4Edge(midx+100, midy-150, 4);
+        customStar4Edge(midx-100, midy-220, 4);
+        customStar4Edge(midx+150, midy-180, 4);
+        customStar4Edge(midx-180, midy-250, 4);
+        customStar4Edge(midx-280, midy-20, 4);
+        customStar4Edge(midx-420, midy+15, 4);
+        customStar4Edge(midx+420, midy-315, 4);
 
         delay(400);
         cleardevice();
     }
-    getch();
     cleardevice();
 }
 void secondIntro(int midx, int midy){
-    customStar4Edge(midx+250, midy+200, 20);
+    showTextInGraphicsWindowFullScr(midx, midy, "After infinity time...");
+
+    customStar4Edge(midx, midy, 10);
+    customStar4Edge(midx+200, midy, 15);
+    customStar4Edge(midx, midy-120, 100);
+    customStar4Edge(midx-160, midy, 500);
 }
-void mainProcess(){
+void mainProcess(int midx, int midy){
+    showTextInGraphicsWindowFullScr(midx, midy, "A long, long time ago...");
+
     while(!kbhit()){
         // printf("This is mian project [cpde] part.");
     }
@@ -175,10 +189,12 @@ int main(){
     int midx = getmaxx() / 2;
     int midy = getmaxy() / 2;
 
-    firstIntro(midx, midy);
-    secondIntro(midx, midy);
-    //mainProcess();
+    firstIntro(midx, midy);       //This is done!! :)
+  //  secondIntro(midx, midy);
+  //  mainProcess(midx, midy);.
 
-   // getch();
+
+
+    getch();
     closegraph();
 }
