@@ -289,7 +289,7 @@ int main(){
     int midy = getmaxy() / 2;
 
     firstIntro(midx, midy);       //This is done!! :)
-    secondIntro(midx, midy);
+    secondIntro(midx, midy);      //This is done!! :)
     mainProcess(midx, midy);
 
     getch();
