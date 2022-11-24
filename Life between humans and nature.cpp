@@ -6,8 +6,14 @@
 #include <math.h>
 #include <time.h>
 
+void customCcircle(int x, int y,int rad, int outlnColor, int fillColor){
+    setfillstyle(SOLID_FILL,fillColor);
+    circle(x,y,rad);
+    floodfill(x+1,y+1,outlnColor);
+}
+
 void customStar4Edge(int x, int y, int e){
-	int m = e/5;
+	int m = e/4;
     setfillstyle(1, 15);
 
 	line(x-m, y, x, y+e);
@@ -40,8 +46,7 @@ void showTextInGraphicsWindowFullScr(int x, int y, char showText[50]){
 	settextstyle(0, HORIZ_DIR, 18);
     outtextxy(midx, midy, showText);
 
-    delay(5000);
-    cleardevice();
+    delay(3000);
 
     settextjustify(CENTER_TEXT, CENTER_TEXT);
 	settextstyle(0, HORIZ_DIR, 18);
@@ -170,16 +175,110 @@ void firstIntro(int m, int n){
 void secondIntro(int midx, int midy){
     showTextInGraphicsWindowFullScr(midx, midy, "After infinity time...");
 
-    customStar4Edge(midx, midy, 10);
-    customStar4Edge(midx+200, midy, 15);
-    customStar4Edge(midx, midy-120, 100);
-    customStar4Edge(midx-160, midy, 500);
+    int start_angle = 90+45, end_angle = 90-45, x_rad = 170, y_rad = 50;
+
+    //1st still img...
+    customCcircle(midx, midy, 125, 15, 4);
+
+    ellipse(midx, midy, start_angle, end_angle, x_rad, y_rad);
+
+    customCcircle(midx+35, midy+20, 4, 15, 15);
+    customCcircle(midx-135,midy+80, 4, 15, 15);
+    customCcircle(midx+150,midy+100, 10, 15, 15);
+
+    customStar4Edge(midx-120, midy-120, 15);
+    showTextInGraphicsWindow(midx+180, midy+40, "The OLD EARTH", 12, 15, 3);
+    ShowPressKey(midx, midy);
+    getch();
+    cleardevice();
+
+    //2nd still img...
+    customCcircle(midx, midy, 125, 15, 4);
+
+    ellipse(midx, midy, start_angle, end_angle, x_rad, y_rad);
+
+    customCcircle(midx+35, midy+20, 4, 15, 15);
+    customCcircle(midx-135,midy+80, 4, 15, 15);
+    customCcircle(midx+150,midy+100, 10, 15, 15);
+
+    customCcircle(midx+450,midy-250, 4, 15, 15);
+
+    customStar4Edge(midx-120, midy-120, 15);
+    showTextInGraphicsWindow(midx+180, midy+40, "The OLD EARTH", 12, 15, 3);
+    showTextInGraphicsWindow(midx+450, midy-220, "Unknown OBJECT", 12, 15, 3);
+    ShowPressKey(midx, midy);
+    getch();
+    cleardevice();
+
+    //3nd still img...
+    customCcircle(midx, midy, 125, 15, 4);
+
+    ellipse(midx, midy, start_angle, end_angle, x_rad, y_rad);
+
+    customCcircle(midx+35, midy+20, 4, 15, 15);
+    customCcircle(midx-135,midy+80, 4, 15, 15);
+    customCcircle(midx+150,midy+100, 10, 15, 15);
+
+    customCcircle(midx+100,midy-205, 4, 15, 15);
+
+    ellipse(midx+100, 755, 90, 120, 200, 600);
+    line(midx+450,midy-250, midx+100,midy-205);
+
+    customStar4Edge(midx-120, midy-120, 15);
+    showTextInGraphicsWindow(midx+180, midy+40, "The OLD EARTH", 12, 15, 3);
+    showTextInGraphicsWindow(midx+150, midy-180, "Unknown OBJ.", 12, 15, 3);
+    showTextInGraphicsWindow(midx, midy-200, "SPEED UP!!", 12, 15, 3);
+    ShowPressKey(midx, midy);
+    getch();
+    cleardevice();
+
+    //4th and last still img...
+    customCcircle(midx, midy, 125, 15, 4);
+
+    ellipse(midx, midy, start_angle, end_angle, x_rad, y_rad);
+
+    customCcircle(midx+35, midy+20, 4, 15, 15);
+    customCcircle(midx-135,midy+80, 4, 15, 15);
+    customCcircle(midx+150,midy+100, 10, 15, 15);
+
+    customStar4Edge(midx-120, midy-120, 15);
+    ShowPressKey(midx, midy);
+
+    ellipse(midx+100, 755, 90, 120, 200, 600);
+    line(midx+450,midy-250, midx+100,midy-205);
+
+    customCcircle(midx, midy, 125, 15, 7);
+
+    setcolor(4);
+    customCcircle(midx, midy-125, 4, 4, 4);
+
+    setcolor(7);
+    line(midx, midy-130, midx, midy-138);
+    line(midx+1, midy-130, midx+1, midy-138);
+    line(midx-1, midy-130, midx-1, midy-138);
+
+    setcolor(7);
+    setfillstyle(SOLID_FILL,7);
+    ellipse(midx, midy-140, 0, 360, 12, 5);
+    floodfill(midx-5, midy-140,7);
+
+    showTextInGraphicsWindow(midx+180, midy+40, "The OLD EARTH", 12, 15, 3);
+    showTextInGraphicsWindow(midx-20, midy-150, "BUMM!!!", 12, 15, 3);
+    getch();
+    cleardevice();
+
+    //Intro 2 done with white color screen...
+    setcolor(WHITE);
+    floodfill(midx, midy, 15);
+    ShowPressKey(midx, midy);
+    getch();
+    cleardevice();
 }
 void mainProcess(int midx, int midy){
     showTextInGraphicsWindowFullScr(midx, midy, "A long, long time ago...");
 
     while(!kbhit()){
-        // printf("This is mian project [cpde] part.");
+
     }
 }
 
@@ -190,10 +289,8 @@ int main(){
     int midy = getmaxy() / 2;
 
     firstIntro(midx, midy);       //This is done!! :)
-  //  secondIntro(midx, midy);
-  //  mainProcess(midx, midy);.
-
-
+    secondIntro(midx, midy);
+    mainProcess(midx, midy);
 
     getch();
     closegraph();
