@@ -6,6 +6,7 @@
 #include <math.h>
 #include <time.h>
 
+int DELAY = 100;
 int m_cloud = 300, m_sun = 0, s_count = 1;
 
 void customCcircle(int x, int y,int rad, int outlnColor, int fillColor){
@@ -191,6 +192,7 @@ void firstIntro(int m, int n){
     }
     cleardevice();
 }
+
 void secondIntro(int midx, int midy){
     showTextInGraphicsWindowFullScr(midx, midy, "After infinity time...");
 
@@ -298,7 +300,6 @@ void daySeen(int midx, int midy){
 
     for(; ;){
         cleardevice();
-        delay(20);
         if(m_sun == 150){           //this valid or not
             m_sun = 0;
             s_count = 0;
@@ -355,7 +356,7 @@ void daySeen(int midx, int midy){
             arc(i, 700, 0+40, 180-40, 50);
         }
         //(0,659 to 1079,659)-------------Here add [ Footer ]-----------------------------------------//
-
+        delay(DELAY);
     }
 }
 
@@ -370,8 +371,6 @@ void mainProcess(int midx, int midy){
         }else{
 //            nightSeen(midx, midy);
         }
-
-        delay(20);
     }
 }
 
