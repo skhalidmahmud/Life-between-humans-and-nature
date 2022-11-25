@@ -94,6 +94,10 @@ void customCloud(int x, int y, int rad){
     setcolor(15);
 }
 
+void humansAndTree(int bgColor){
+
+}
+
 void firstIntro(int m, int n){
     time_t secondsStart, secondsEnd;
     secondsStart = time(NULL);
@@ -326,6 +330,9 @@ void daySeen(int midx, int midy){
 
         //(0,0 to 1079,179)---Here add [ 'sky', planet or sky view [like, moon, sun, star, etc] ]---//
 
+
+        humansAndTree(1);
+
         setcolor(YELLOW);
         line(0,179,1079,179);
 
@@ -404,6 +411,8 @@ void nightSeen(int midx, int midy){
 
         setcolor(YELLOW);
         line(0,179,1079,179);
+
+        humansAndTree(0);
 
         //(0,359 to 1079,359)--------Here add [ Tree & other senary ]-------------------------------//
 

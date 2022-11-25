@@ -4,7 +4,7 @@
 	<ActiveTarget name="Debug" />
 	<File name="Life between humans and nature.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="12493" topLine="22" />
+			<Cursor1 position="9661" topLine="68" />
 		</Cursor>
 		<Folding>
 			<Collapse line="11" />
@@ -15,9 +15,10 @@
 			<Collapse line="71" />
 			<Collapse line="79" />
 			<Collapse line="96" />
-			<Collapse line="195" />
-			<Collapse line="298" />
-			<Collapse line="362" />
+			<Collapse line="100" />
+			<Collapse line="199" />
+			<Collapse line="447" />
+			<Collapse line="461" />
 		</Folding>
 	</File>
 </CodeBlocks_layout_file>
