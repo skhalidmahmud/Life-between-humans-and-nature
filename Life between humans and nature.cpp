@@ -6,6 +6,8 @@
 #include <math.h>
 #include <time.h>
 
+int m_cloud = 300, m_sun = 0, s_count = 1;
+
 void customCcircle(int x, int y,int rad, int outlnColor, int fillColor){
     setfillstyle(SOLID_FILL,fillColor);
     circle(x,y,rad);
@@ -76,7 +78,7 @@ void planetMove(int xrad, int yrad, int midx, int midy, int x[60], int y[60]){
 
 void customCloud(int x, int y, int rad){
     if(x >= 1050){
-        x = m+250;
+        x = m_cloud+250;
     }
     setcolor(BLACK);
     arc(x, y, 35, 90+55, rad);
@@ -291,11 +293,85 @@ void secondIntro(int midx, int midy){
     getch();
     cleardevice();
 }
+
+void daySeen(int midx, int midy){
+
+    for(; ;){
+        cleardevice();
+        delay(20);
+        if(m_sun == 150){           //this valid or not
+            m_sun = 0;
+            s_count = 0;
+            break;
+        }
+
+        int x0 = 125, y0 = 90;
+        int here_y = 80;
+
+        setbkcolor(WHITE);                  //for full screen color 15
+
+        setcolor(YELLOW);
+        m_sun = m_sun +1;
+
+        customCcircle(x0, m_sun, 40, YELLOW, YELLOW);        //for sun
+
+        m_cloud = m_cloud+2;
+        if(m_cloud==1050){
+            m_cloud = 300;
+        }
+        customCloud( m_cloud-20,y0+10, 25);
+        customCloud( m_cloud+150,y0-50, 25);
+        customCloud( m_cloud+500,y0+10, 25);         //3 cloud
+
+        //(0,0 to 1079,179)---Here add [ 'sky', planet or sky view [like, moon, sun, star, etc] ]---//
+
+        setcolor(YELLOW);
+        line(0,179,1079,179);
+
+        //(0,359 to 1079,359)--------Here add [ Tree & other senary ]-------------------------------//
+
+        setcolor(YELLOW);
+        line(0,359,1079,359);
+
+        setcolor(BLACK);
+        line(0,610,1079,610);
+        line(0,611,1079,611);
+
+        setlinestyle(1, 0, 1);
+        line(0,612,1079,612);
+        line(0,613,1079,613);
+
+        setlinestyle(0, 0, 1);
+        line(0,614,1079,614);
+        line(0,615,1079,615);
+
+        //(0,659 to 1079,659)------Here add [ Subject & main content ]-------------------------------//
+
+        setcolor(YELLOW);
+        line(0,659,1079,659);
+
+        setcolor(BLACK);
+        for(int i = -30; i<1150; i = i+60){
+            arc(i, 700, 0+40, 180-40, 50);
+        }
+        //(0,659 to 1079,659)-------------Here add [ Footer ]-----------------------------------------//
+
+    }
+}
+
 void mainProcess(int midx, int midy){
     showTextInGraphicsWindowFullScr(midx, midy, "A long, long time ago...");
 
     while(!kbhit()){
+        cleardevice();
 
+        if(s_count == 1){
+            daySeen(midx, midy);
+        }else{
+//            nightSeen(midx, midy);
+        }
+
+        delay(20);
     }
 }
 
@@ -306,7 +382,7 @@ int main(){
     int midy = getmaxy() / 2;
 
     firstIntro(midx, midy);       //This is done!! :)
-    secondIntro(midx, midy);
+    secondIntro(midx, midy);      //This is done!! :)
     mainProcess(midx, midy);
 
     getch();
