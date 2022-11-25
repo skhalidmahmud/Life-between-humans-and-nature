@@ -360,6 +360,82 @@ void daySeen(int midx, int midy){
     }
 }
 
+void nightSeen(int midx, int midy){
+    for(; ;){
+        cleardevice();
+
+        for(int i=0; i<=100; i++){
+            int x=rand()%1079;
+            int y=rand()%179;
+            putpixel(x,y,i%15);
+
+            if(i==25){
+                customStar4Edge(x, y, 5);
+                customStar4Edge(x+400, y, 5);
+            }
+        }
+
+        customStar4Edge(1000, 100, 8);
+        customStar4Edge(300, 50, 6);
+
+        if(m_sun == 150){           //this valid or not
+            m_sun = 0;
+            s_count = 1;
+            break;
+        }
+
+        int x0 = 125, y0 = 90;
+       /*for moon*/
+        int here_y = 80;
+
+        setbkcolor(BLACK);                  //for full screen color 0
+
+        setcolor(WHITE);
+        m_sun = m_sun +1;
+
+        setfillstyle(SOLID_FILL,WHITE);
+
+        arc(x0, m_sun, 180+30, 90, 41);              //for moon
+        arc(x0-15, m_sun-9, 180+55, 90-22, 35);
+
+        floodfill(x0+39, m_sun,WHITE);
+
+        //(0,0 to 1079,179)---Here add [ 'sky', planet or sky view [like, moon, sun, star, etc] ]---//
+
+        setcolor(YELLOW);
+        line(0,179,1079,179);
+
+        //(0,359 to 1079,359)--------Here add [ Tree & other senary ]-------------------------------//
+
+        setcolor(YELLOW);
+        line(0,359,1079,359);
+
+        setcolor(WHITE);
+        line(0,610,1079,610);
+        line(0,611,1079,611);
+
+        setlinestyle(1, 0, 1);
+        line(0,612,1079,612);
+        line(0,613,1079,613);
+
+        setlinestyle(0, 0, 1);
+        line(0,614,1079,614);
+        line(0,615,1079,615);
+
+        //(0,659 to 1079,659)------Here add [ Subject & main content ]-------------------------------//
+
+        setcolor(YELLOW);
+        line(0,659,1079,659);
+
+        setcolor(WHITE);
+        for(int i = -30; i<1150; i = i+60){
+            arc(i, 700, 0+40, 180-40, 50);
+        }
+        //(0,659 to 1079,659)-------------Here add [ Footer ]-----------------------------------------//
+        delay(DELAY);
+    }
+}
+
 void mainProcess(int midx, int midy){
     showTextInGraphicsWindowFullScr(midx, midy, "A long, long time ago...");
 
@@ -369,7 +445,7 @@ void mainProcess(int midx, int midy){
         if(s_count == 1){
             daySeen(midx, midy);
         }else{
-//            nightSeen(midx, midy);
+            nightSeen(midx, midy);
         }
     }
 }
@@ -382,7 +458,7 @@ int main(){
 
     firstIntro(midx, midy);       //This is done!! :)
     secondIntro(midx, midy);      //This is done!! :)
-    mainProcess(midx, midy);
+    mainProcess(midx, midy);      //Day and night layout design done!
 
     getch();
     closegraph();
