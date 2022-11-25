@@ -74,6 +74,23 @@ void planetMove(int xrad, int yrad, int midx, int midy, int x[60], int y[60]){
     }
 }
 
+void customCloud(int x, int y, int rad){
+    if(x >= 1050){
+        x = m+250;
+    }
+    setcolor(BLACK);
+    arc(x, y, 35, 90+55, rad);
+    arc(x, y, 180+35, 180+90+55, rad);
+    arc(x-30, y, 35, 180+90+55, rad);
+    arc(x+30, y, 180+35, 90+55, rad);
+
+    setcolor(11);
+    setfillstyle(SOLID_FILL, 11);
+    floodfill(x, y, 0);
+
+    setcolor(15);
+}
+
 void firstIntro(int m, int n){
     time_t secondsStart, secondsEnd;
     secondsStart = time(NULL);
@@ -289,7 +306,7 @@ int main(){
     int midy = getmaxy() / 2;
 
     firstIntro(midx, midy);       //This is done!! :)
-    secondIntro(midx, midy);      //This is done!! :)
+    secondIntro(midx, midy);
     mainProcess(midx, midy);
 
     getch();
