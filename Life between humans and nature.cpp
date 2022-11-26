@@ -134,7 +134,32 @@ void customCloud(int x, int y, int rad){
 
 void humansAndTree(int bgColor){
     setcolor(bgColor);
-   // singleMan(500, 500, 10);
+    singleMan(22, 600, 10);
+    singleMan(122, 600, 10);
+    singleMan(322, 600, 10);
+    singleMan(422, 600, 10);
+    singleMan(622, 600, 10);
+    singleMan(722, 600, 10);
+    singleMan(922, 600, 10);
+    singleMan(22+50, 600-50, 10);
+    singleMan(122+50, 600-50, 10);
+    singleMan(322+50, 600-50, 10);
+    singleMan(422+50, 600-50, 10);
+    singleMan(622+50, 600-50, 10);
+    singleMan(722+50, 600-50, 10);
+    singleMan(922+50, 600-50, 10);
+    RIP(200, 600);
+    RIP(300, 600);
+    RIP(500, 600);
+    RIP(700, 600);
+    tree2(-190, 50);
+    tree2(-90, 0);
+    tree2(190, 0);
+    tree2(390, 50);
+    tree2(790, 0);
+    tree1(0, 40);
+    tree1(500, 40);
+    tree1(650, 50);
 }
 
 void firstIntro(int m, int n){
@@ -495,7 +520,7 @@ void nightSeen(int midx, int midy){
 }
 
 void mainProcess(int midx, int midy){
-    showTextInGraphicsWindowFullScr(midx, midy, "A long, long time ago...");
+  //  showTextInGraphicsWindowFullScr(midx, midy, "A long, long time ago...");
 
     while(!kbhit()){
         cleardevice();
@@ -513,8 +538,8 @@ int main(){
     int midx = getmaxx() / 2;
     int midy = getmaxy() / 2;
 
-    firstIntro(midx, midy);       //This is done!! :)
-    secondIntro(midx, midy);      //This is done!! :)
+  //  firstIntro(midx, midy);       //This is done!! :)
+  //  secondIntro(midx, midy);      //This is done!! :)
     mainProcess(midx, midy);      //Total placement done//
 
     getch();
