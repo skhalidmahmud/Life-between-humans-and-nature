@@ -520,7 +520,7 @@ void nightSeen(int midx, int midy){
 }
 
 void mainProcess(int midx, int midy){
-  //  showTextInGraphicsWindowFullScr(midx, midy, "A long, long time ago...");
+    showTextInGraphicsWindowFullScr(midx, midy, "A long, long time ago...");
 
     while(!kbhit()){
         cleardevice();
@@ -538,8 +538,8 @@ int main(){
     int midx = getmaxx() / 2;
     int midy = getmaxy() / 2;
 
-  //  firstIntro(midx, midy);       //This is done!! :)
-  //  secondIntro(midx, midy);      //This is done!! :)
+    firstIntro(midx, midy);       //This is done!! :)
+    secondIntro(midx, midy);      //This is done!! :)
     mainProcess(midx, midy);      //Total placement done//
 
     getch();
