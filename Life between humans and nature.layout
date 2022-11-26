@@ -4,21 +4,25 @@
 	<ActiveTarget name="Debug" />
 	<File name="Life between humans and nature.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="9661" topLine="68" />
+			<Cursor1 position="648" topLine="2" />
 		</Cursor>
 		<Folding>
 			<Collapse line="11" />
-			<Collapse line="17" />
-			<Collapse line="37" />
-			<Collapse line="43" />
-			<Collapse line="63" />
-			<Collapse line="71" />
-			<Collapse line="79" />
-			<Collapse line="96" />
-			<Collapse line="100" />
-			<Collapse line="199" />
-			<Collapse line="447" />
-			<Collapse line="461" />
+			<Collapse line="22" />
+			<Collapse line="30" />
+			<Collapse line="38" />
+			<Collapse line="49" />
+			<Collapse line="55" />
+			<Collapse line="75" />
+			<Collapse line="81" />
+			<Collapse line="101" />
+			<Collapse line="109" />
+			<Collapse line="117" />
+			<Collapse line="134" />
+			<Collapse line="138" />
+			<Collapse line="237" />
+			<Collapse line="485" />
+			<Collapse line="499" />
 		</Folding>
 	</File>
 </CodeBlocks_layout_file>

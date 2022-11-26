@@ -9,6 +9,44 @@
 int DELAY = 100;
 int m_cloud = 300, m_sun = 0, s_count = 1;
 
+void singleMan(int x, int y, int legDis){
+	circle(x, y - 90 + m, 10);   //head
+	line(x, y - 80 + m, x, y - 30 + 10);    //body line
+	line(x, y - 70 + m, x + 10, y - 60 + m);    //hand
+	line(x, y -70 + m, x - 10, y - 60 + m);  //hand
+	line(x + 10, y - 60 + m, x + 20, y - 70 + m);  //arm
+	line(x - 10, y - 60 + m, x - 20, y - 70 + m);  //arm
+	line(x, y - 30 + 10, x + legDis, y); //leg
+	line(x, y - 30 + 10, x - legDis, y); //leg
+}
+
+void RIP(int x, int y){
+	line(x, y, x, y - 25);
+	line(x - 40, y, x - 40, y - 25);
+	line(x - 40, y, x, y);
+	outtextxy(x-35, y-25, "R.I.P");
+    arc(x - 20, y - 22, 0, 180, 21);
+}
+
+void tree1(int x, int y){
+    line(207 + x,220 + y,207 + x,280 + y);
+    line(240 + x,220 + y,240 + x,280 + y);
+    ellipse(200 + x,200 + y,90,290,25,30);
+    ellipse(222 + x,175 + y,360,180,30,30);
+    ellipse(243 + x,200 + y,270,90,35,30);
+}
+
+void tree2(int x, int y){
+    line(215 + x,220 + y,215 + x,270 + y);
+    line(240 + x,220 + y,240 + x,270 + y);
+
+    line(218 + x,225 + y,195 + x,225 + y);
+    line(237 + x,225 + y,260 + x,225 + y);
+
+    line(195 + x,225 + y,227 + x,185 + y);
+    line(260 + x,225 + y,227 + x,185 + y);
+}
+
 void customCcircle(int x, int y,int rad, int outlnColor, int fillColor){
     setfillstyle(SOLID_FILL,fillColor);
     circle(x,y,rad);
