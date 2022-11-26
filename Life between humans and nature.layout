@@ -2,9 +2,9 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="Life between humans and nature.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Life between humans and nature.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="648" topLine="2" />
+			<Cursor1 position="14397" topLine="38" />
 		</Cursor>
 		<Folding>
 			<Collapse line="11" />
@@ -19,10 +19,11 @@
 			<Collapse line="109" />
 			<Collapse line="117" />
 			<Collapse line="134" />
-			<Collapse line="138" />
-			<Collapse line="237" />
-			<Collapse line="485" />
-			<Collapse line="499" />
+			<Collapse line="139" />
+			<Collapse line="238" />
+			<Collapse line="344" />
+			<Collapse line="414" />
+			<Collapse line="496" />
 		</Folding>
 	</File>
 </CodeBlocks_layout_file>

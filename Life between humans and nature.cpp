@@ -7,7 +7,7 @@
 #include <time.h>
 
 int DELAY = 100;
-int m_cloud = 300, m_sun = 0, s_count = 1;
+int m_cloud = 300, m_sun = 0, s_count = 1, m = 10;
 
 void singleMan(int x, int y, int legDis){
 	circle(x, y - 90 + m, 10);   //head
@@ -47,7 +47,7 @@ void tree2(int x, int y){
     line(260 + x,225 + y,227 + x,185 + y);
 }
 
-void customCcircle(int x, int y,int rad, int outlnColor, int fillColor){
+void customCircle(int x, int y,int rad, int outlnColor, int fillColor){
     setfillstyle(SOLID_FILL,fillColor);
     circle(x,y,rad);
     floodfill(x+1,y+1,outlnColor);
@@ -133,7 +133,8 @@ void customCloud(int x, int y, int rad){
 }
 
 void humansAndTree(int bgColor){
-
+    setcolor(bgColor);
+   // singleMan(500, 500, 10);
 }
 
 void firstIntro(int m, int n){
@@ -241,13 +242,13 @@ void secondIntro(int midx, int midy){
     int start_angle = 90+45, end_angle = 90-45, x_rad = 170, y_rad = 50;
 
     //1st still img...
-    customCcircle(midx, midy, 125, 15, 4);
+    customCircle(midx, midy, 125, 15, 4);
 
     ellipse(midx, midy, start_angle, end_angle, x_rad, y_rad);
 
-    customCcircle(midx+35, midy+20, 4, 15, 15);
-    customCcircle(midx-135,midy+80, 4, 15, 15);
-    customCcircle(midx+150,midy+100, 10, 15, 15);
+    customCircle(midx+35, midy+20, 4, 15, 15);
+    customCircle(midx-135,midy+80, 4, 15, 15);
+    customCircle(midx+150,midy+100, 10, 15, 15);
 
     customStar4Edge(midx-120, midy-120, 15);
     showTextInGraphicsWindow(midx+180, midy+40, "The OLD EARTH", 12, 15, 3);
@@ -256,15 +257,15 @@ void secondIntro(int midx, int midy){
     cleardevice();
 
     //2nd still img...
-    customCcircle(midx, midy, 125, 15, 4);
+    customCircle(midx, midy, 125, 15, 4);
 
     ellipse(midx, midy, start_angle, end_angle, x_rad, y_rad);
 
-    customCcircle(midx+35, midy+20, 4, 15, 15);
-    customCcircle(midx-135,midy+80, 4, 15, 15);
-    customCcircle(midx+150,midy+100, 10, 15, 15);
+    customCircle(midx+35, midy+20, 4, 15, 15);
+    customCircle(midx-135,midy+80, 4, 15, 15);
+    customCircle(midx+150,midy+100, 10, 15, 15);
 
-    customCcircle(midx+450,midy-250, 4, 15, 15);
+    customCircle(midx+450,midy-250, 4, 15, 15);
 
     customStar4Edge(midx-120, midy-120, 15);
     showTextInGraphicsWindow(midx+180, midy+40, "The OLD EARTH", 12, 15, 3);
@@ -274,15 +275,15 @@ void secondIntro(int midx, int midy){
     cleardevice();
 
     //3nd still img...
-    customCcircle(midx, midy, 125, 15, 4);
+    customCircle(midx, midy, 125, 15, 4);
 
     ellipse(midx, midy, start_angle, end_angle, x_rad, y_rad);
 
-    customCcircle(midx+35, midy+20, 4, 15, 15);
-    customCcircle(midx-135,midy+80, 4, 15, 15);
-    customCcircle(midx+150,midy+100, 10, 15, 15);
+    customCircle(midx+35, midy+20, 4, 15, 15);
+    customCircle(midx-135,midy+80, 4, 15, 15);
+    customCircle(midx+150,midy+100, 10, 15, 15);
 
-    customCcircle(midx+100,midy-205, 4, 15, 15);
+    customCircle(midx+100,midy-205, 4, 15, 15);
 
     ellipse(midx+100, 755, 90, 120, 200, 600);
     line(midx+450,midy-250, midx+100,midy-205);
@@ -296,13 +297,13 @@ void secondIntro(int midx, int midy){
     cleardevice();
 
     //4th and last still img...
-    customCcircle(midx, midy, 125, 15, 4);
+    customCircle(midx, midy, 125, 15, 4);
 
     ellipse(midx, midy, start_angle, end_angle, x_rad, y_rad);
 
-    customCcircle(midx+35, midy+20, 4, 15, 15);
-    customCcircle(midx-135,midy+80, 4, 15, 15);
-    customCcircle(midx+150,midy+100, 10, 15, 15);
+    customCircle(midx+35, midy+20, 4, 15, 15);
+    customCircle(midx-135,midy+80, 4, 15, 15);
+    customCircle(midx+150,midy+100, 10, 15, 15);
 
     customStar4Edge(midx-120, midy-120, 15);
     ShowPressKey(midx, midy);
@@ -310,10 +311,10 @@ void secondIntro(int midx, int midy){
     ellipse(midx+100, 755, 90, 120, 200, 600);
     line(midx+450,midy-250, midx+100,midy-205);
 
-    customCcircle(midx, midy, 125, 15, 7);
+    customCircle(midx, midy, 125, 15, 7);
 
     setcolor(4);
-    customCcircle(midx, midy-125, 4, 4, 4);
+    customCircle(midx, midy-125, 4, 4, 4);
 
     setcolor(7);
     line(midx, midy-130, midx, midy-138);
@@ -332,7 +333,10 @@ void secondIntro(int midx, int midy){
 
     //Intro 2 done with white color screen...
     setcolor(WHITE);
-    floodfill(midx, midy, 15);
+    floodfill(midx, midy, 1);
+
+    setbkcolor(BLACK);
+
     ShowPressKey(midx, midy);
     getch();
     cleardevice();
@@ -348,6 +352,10 @@ void daySeen(int midx, int midy){
             break;
         }
 
+        if(kbhit()){           //this valid break loop and stop code
+            break;
+        }
+
         int x0 = 125, y0 = 90;
         int here_y = 80;
 
@@ -356,7 +364,7 @@ void daySeen(int midx, int midy){
         setcolor(YELLOW);
         m_sun = m_sun +1;
 
-        customCcircle(x0, m_sun, 40, YELLOW, YELLOW);        //for sun
+        customCircle(x0, m_sun, 40, YELLOW, YELLOW);        //for sun
 
         m_cloud = m_cloud+2;
         if(m_cloud==1050){
@@ -368,8 +376,7 @@ void daySeen(int midx, int midy){
 
         //(0,0 to 1079,179)---Here add [ 'sky', planet or sky view [like, moon, sun, star, etc] ]---//
 
-
-        humansAndTree(1);
+        humansAndTree(0);
 
         setcolor(YELLOW);
         line(0,179,1079,179);
@@ -408,6 +415,10 @@ void daySeen(int midx, int midy){
 void nightSeen(int midx, int midy){
     for(; ;){
         cleardevice();
+
+        if(kbhit()){           //this valid break loop and stop code
+            break;
+        }
 
         for(int i=0; i<=100; i++){
             int x=rand()%1079;
@@ -450,7 +461,7 @@ void nightSeen(int midx, int midy){
         setcolor(YELLOW);
         line(0,179,1079,179);
 
-        humansAndTree(0);
+        humansAndTree(15);
 
         //(0,359 to 1079,359)--------Here add [ Tree & other senary ]-------------------------------//
 
@@ -498,14 +509,13 @@ void mainProcess(int midx, int midy){
 }
 
 int main(){
-
     initwindow(1080,720,"The Khalid's BGI");
     int midx = getmaxx() / 2;
     int midy = getmaxy() / 2;
 
     firstIntro(midx, midy);       //This is done!! :)
     secondIntro(midx, midy);      //This is done!! :)
-    mainProcess(midx, midy);      //Day and night layout design done!
+    mainProcess(midx, midy);      //Total placement done//
 
     getch();
     closegraph();
